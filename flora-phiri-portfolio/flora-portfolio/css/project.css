@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Flora Phiri | Portfolio
+   Project detail pages. Loaded alongside css/main.css.
+   ========================================================================== */
+
+.project-page {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.project-page-category {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+}
+
+.project-page-title {
+  font-size: 2rem;
+}
+
+.project-page-lede {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  margin-top: 0;
+}
+
+.project-page h2 {
+  font-size: 1.25rem;
+  margin-top: 2.25rem;
+}
+
+.project-page p {
+  color: var(--color-text-secondary);
+}
+
+.project-page strong {
+  color: var(--color-text-primary);
+}
+
+.project-meta {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.project-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+}
+
+.project-meta .project-tools {
+  margin: 0;
+}
+
+.pipeline-steps {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.project-page .snippet-caption {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  margin: 1.75rem 0 0.6rem;
+}
+
+.project-page .snippet-frame {
+  margin: 0 0 1.5rem;
+}
+
+.project-page .project-link {
+  display: block;
+  width: fit-content;
+  margin: 2.5rem auto 0;
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--radius-pill);
+  transition: opacity 0.2s ease;
+}
+
+.project-page .project-link:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

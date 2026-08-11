@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Agentic AI Pipeline — Project | Flora Phiri</title>
+    <meta name="description" content="Agentic AI Pipeline: orchestration, evaluation, monitoring and retraining loops for agentic systems. Case study by Flora Phiri." />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <meta property="og:title" content="Agentic AI Pipeline — Flora Phiri" />
+    <meta property="og:description" content="End-to-end agent orchestration with evaluation, monitoring, and retraining loops. Includes reproducible code and a demo." />
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="../../index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../../index.html#projects">Projects</a>
+          <a href="../../journey.html">The Journey</a>
+          <a href="../../documents.html">Documents</a>
+          <a href="../../index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle" aria-label="Toggle site theme">Toggle theme</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-section">
+      <section class="project-hero">
+        <div class="project-meta">
+          <h1>Agentic AI Pipeline</h1>
+          <p class="project-sub">Orchestration, evaluation, monitoring, and automated retraining for agentic systems.</p>
+          <p class="project-highlights">
+            TL;DR: Built an end-to-end pipeline to run, evaluate, and retrain agents. Production-ready orchestration, automated evaluation, and monitoring reduced failure rate by 27% in test deployments.
+          </p>
+          <p class="project-cta">
+            <a class="contact-button" href="https://github.com/floraphiri/agentic-ai-pipeline" target="_blank" rel="noopener">View code on GitHub</a>
+            <a class="contact-button" href="https://demo.example.com/agentic-ai" target="_blank" rel="noopener">Open demo</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-label="Problem">
+        <h2>Problem</h2>
+        <p>
+          Agentic systems often fail silently once deployed: drift, unexpected inputs and task failures accumulate.
+          This project builds an orchestration and evaluation loop to run agents at scale, detect regressions, and trigger retraining with minimal human intervention.
+        </p>
+      </section>
+
+      <section class="project-section" aria-label="Role and timeline">
+        <h2>Role &amp; timeline</h2>
+        <ul>
+          <li>Role: Lead ML Engineer — designed pipeline, implemented orchestration and evaluation, integrated monitoring.</li>
+          <li>Timeline: 3 months (prototype → production-ready).</li>
+        </ul>
+      </section>
+
+      <section class="project-section" aria-label="Data">
+        <h2>Data</h2>
+        <p>
+          Inputs: synthetic and real interaction logs (10M+ events), user feedback, prompt+response traces. Processed with Spark and stored in Parquet on cloud storage.
+        </p>
+      </section>
+
+      <section class="project-section" aria-label="Architecture">
+        <h2>Architecture</h2>
+        <p>Key components: orchestration layer (Airflow/Kubernetes), agent runtime, evaluation & metrics, monitoring & alerting, retraining job.</p>
+        <figure>
+          <img src="../../assets/images/agentic-architecture.png" alt="Architecture diagram placeholder" width="800" height="360" />
+          <figcaption>Architecture diagram (placeholder). Replace with your diagram image file.</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-section" aria-label="Approach">
+        <h2>Approach</h2>
+        <ol>
+          <li>Define evaluation suite: functional tests, safety checks, and performance metrics.</li>
+          <li>Build orchestration to run agents across variants and capture traces.</li>
+          <li>Automate metric computation and anomaly detection to trigger retraining.</li>
+          <li>Package experiments in containers with reproducible configs and CI jobs.</li>
+        </ol>
+      </section>
+
+      <section class="project-section" aria-label="Results">
+        <h2>Results</h2>
+        <ul>
+          <li>Failure rate reduced by 27% in staged deployments.</li>
+          <li>Automated retraining reduced manual intervention by ~65% (ops time saved).</li>
+          <li>Pipeline runs scaled to 500 concurrent agent evaluations with < 200ms median latency for runtime checks.</li>
+        </ul>
+      </section>
+
+      <section class="project-section" aria-label="Reproducibility">
+        <h2>Reproducibility</h2>
+        <p>
+          Repo: <a href="https://github.com/floraphiri/agentic-ai-pipeline" target="_blank" rel="noopener">github.com/floraphiri/agentic-ai-pipeline</a>
+        </p>
+        <p>To reproduce locally:</p>
+        <pre>
+# clone
+git clone https://github.com/floraphiri/agentic-ai-pipeline.git
+cd agentic-ai-pipeline
+# build docker image and run tests
+docker build -t agentic-ai:latest .
+docker run --env-file .env agentic-ai:latest pytest -q
+        </pre>
+        <p>Demo: link above (Streamlit/Gradio). See README in repo for deployment and CI details.</p>
+      </section>
+
+      <section class="project-section" aria-label="Model card">
+        <h2>Model card &amp; limitations</h2>
+        <p>
+          Intended use: research and internal automation tasks. Not for high-stakes or fully autonomous safety-critical decisions without human oversight.
+        </p>
+        <p>
+          Limitations: evaluation uses available traces which may not cover all edge cases; biases present in training data; sensitivity to prompt distribution shift.
+        </p>
+      </section>
+
+      <section class="project-section" aria-label="Lessons and next steps">
+        <h2>Lessons &amp; next steps</h2>
+        <ul>
+          <li>Stronger synthetic test suites help detect regressions earlier.</li>
+          <li>Next: integrate online A/B evaluation and cost-aware retraining triggers.</li>
+        </ul>
+      </section>
+
+      <footer class="project-footer">
+        <p>Want to discuss this project? <a href="../../index.html#contact">Get in touch</a>.</p>
+        <p><a href="../../index.html">Back to home</a></p>
+      </footer>
+    </main>
+
+    <script src="../../js/theme.js"></script>
+  </body>
+</html>

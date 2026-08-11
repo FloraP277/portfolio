@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>The Journey — Flora Phiri</title>
+    <meta name="description" content="The professional journey of Flora Phiri — education, research, projects, and experience in ML and data systems." />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="journey.html">The Journey</a>
+          <a href="documents.html">Documents</a>
+          <a href="index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle" aria-label="Toggle site theme">Toggle theme</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-section journey-page">
+      <section class="hero-section">
+        <div class="profile-card">
+          <h1>FLORA PHIRI</h1>
+          <p class="profile-role">Machine Learning and Data Systems Researcher | Predictive Maintenance, Industrial AI, and Intelligent Cloud Systems</p>
+          <p class="contact-line">Washington, DC &middot; (240) 295-8506 &middot; <a href="mailto:flora.phiri@gwu.edu">flora.phiri@gwu.edu</a> &middot; <a href="https://linkedin.com/in/flora-phiri" target="_blank" rel="noopener">linkedin.com/in/flora-phiri</a></p>
+        </div>
+      </section>
+
+      <section class="timeline-section">
+        <div class="journey-actions">
+          <button id="download-pdf" class="contact-button">Download PDF</button>
+        </div>
+        <h2>The Journey</h2>
+        <p class="intro">A view of my education, research, projects, and professional experience focused on industrial AI, predictive maintenance, and scalable cloud systems.</p>
+
+        <!-- Interactive horizontal timeline: click a point to reveal/scroll to that section -->
+        <nav class="timeline-visual" aria-label="Career timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+          <button class="timeline-point" data-target="#education" aria-controls="education" aria-selected="false">Education</button>
+          <button class="timeline-point" data-target="#projects" aria-controls="projects" aria-selected="false">Projects</button>
+          <button class="timeline-point" data-target="#experience" aria-controls="experience" aria-selected="false">Experience</button>
+          <button class="timeline-point" data-target="#publication" aria-controls="publication" aria-selected="false">Publication</button>
+          <button class="timeline-point" data-target="#technical-skills" aria-controls="technical-skills" aria-selected="false">Skills</button>
+          <button class="timeline-point" data-target="#certifications" aria-controls="certifications" aria-selected="false">Certifications</button>
+        </nav>
+
+         <article class="timeline-item" id="education">
+          <h3>EDUCATION</h3>
+          <div class="timeline-content collapsible">
+            <h4>THE GEORGE WASHINGTON UNIVERSITY, School of Business — Washington, DC</h4>
+            <p><strong>Master of Science, Information Systems Technology</strong> &middot; Expected December 2026</p>
+            <p>Relevant Coursework: Cloud Foundations, Web Development, IT Project Management, Information Systems Analysis and Design</p>
+
+            <h4>CHINHOYI UNIVERSITY OF TECHNOLOGY, Graduate Business School — Chinhoyi, Zimbabwe</h4>
+            <p><strong>Master of Science, Big Data Analytics</strong> &middot; December 2024</p>
+            <p>Dissertation: A Predictive Maintenance Model for Trackless Mobile Machinery in Mining Operations: A Case Study for Mupani Mine</p>
+
+            <h4>MIDLANDS STATE UNIVERSITY, Faculty of Business Sciences — Harare, Zimbabwe</h4>
+            <p><strong>Bachelor of Commerce (Honors), Information Systems</strong> &middot; December 2022</p>
+            <p>Relevant Coursework: Operating Systems, Data Communications and Networks, Computer Security</p>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="research-interests">
+          <h3>RESEARCH INTERESTS</h3>
+          <div class="timeline-content collapsible">
+            <p>Machine learning for predictive maintenance and anomaly detection; deep learning for sensor and operational data; industrial AI; trustworthy cloud and API systems; edge machine learning; scalable data-intensive computing; human-in-the-loop decision systems.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="publication">
+          <h3>PUBLICATION</h3>
+          <div class="timeline-content">
+            <p><strong>Obakpororo, E. R., Omojola, A. F., Phiri, F., Ugwu, D. C., Obaze, G. E., & Justice, O. (2026).</strong> “Cloud API Security and Vulnerability Assessment: A Comprehensive Framework for Threat Detection, Risk Evaluation, and Mitigation Strategies.” ScienceXplorer, Vol. 8.</p>
+            <ul>
+              <li>Co-authored a sequential mixed-methods study of 312 production REST and GraphQL APIs across AWS, Microsoft Azure, and Google Cloud Platform, combining automated vulnerability testing, static analysis, manual assessment, quantitative risk scoring, and interviews with 18 cloud-security practitioners.</li>
+              <li>Evaluated AI-assisted behavioral anomaly detection alongside conventional security controls and applied descriptive statistics, chi-square analysis, Kruskal-Wallis testing, CVSS scoring, and thematic analysis to compare vulnerabilities across cloud providers and DevSecOps maturity levels.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="projects">
+          <h3>RESEARCH & MACHINE LEARNING PROJECTS</h3>
+          <div class="timeline-content collapsible">
+            <h4>Predictive Maintenance of Trackless Mobile Machinery — Master’s Dissertation</h4>
+            <p>Designed a pragmatic, quantitative study using 5,000 operational records containing vibration, temperature, hydraulic pressure, operating hours, and failure outcomes. Cleaned and transformed sensor data, treated missing values and outliers, conducted exploratory analysis, and compared Neural Network, Gradient Boosting, Random Forest, and Support Vector Machine models using accuracy, precision, recall, F1 score, ROC-AUC, and cross-validation. The Neural Network achieved 94.2% accuracy and 95.4% ROC-AUC; feature analysis identified hydraulic pressure and vibration as the strongest predictors of failure.</p>
+
+            <h4>Natural Language Processing and Text Classification</h4>
+            <p>Built an NLP workflow incorporating text normalization, HTML and punctuation removal, tokenization, stop-word handling, stemming, lemmatization, label encoding, and sequence preparation. Developed an embedding-based LSTM model in TensorFlow/Keras and evaluated classification performance using accuracy and class-level metrics.</p>
+
+            <h4>Handwritten-Digit Recognition with Neural Networks</h4>
+            <p>Developed a TensorFlow/Keras multilayer neural network for ten-class MNIST digit recognition. Normalized and reshaped image inputs, trained the model with validation monitoring, and evaluated predictions using accuracy, precision, recall, F1 scores, and confusion analysis, achieving 95.44% test accuracy.</p>
+
+            <h4>Smart DMV — AI-Assisted Document Verification Platform</h4>
+            <p>Collaborated on the design of a cloud-backed pre-appointment verification platform for the DC DMV. The proposed system uses OCR and AI confidence scoring to assess uploaded identity and residency documents, routes low-confidence cases to staff review, and supports appointment scheduling after verification.</p>
+
+            <h4>Diabetes Risk Prediction with Deep Learning</h4>
+            <p>Developed a dense neural-network classifier using clinical measurements from the Pima Indians Diabetes dataset. Standardized numerical features, trained and validated a TensorFlow/Keras model, and evaluated performance with accuracy, confusion matrices, and classification reports, achieving 78.57% test accuracy.</p>
+
+            <h4>Foundational Machine Learning Portfolio</h4>
+            <p>Implemented regression and classification workflows using Linear Regression, Logistic Regression, Support Vector Machines, Random Forests, and Gradient Boosting across salary, passenger-survival, and biological classification datasets. Applied exploratory analysis, feature preprocessing, scaling, train-test validation, cross-validation, confusion matrices, classification reports, and regression error metrics.</p>
+
+            <h4>Monolith-to-Microservices Migration on AWS</h4>
+            <p>Containerized and migrated a monolithic Node.js message-board application into independently deployable services using Docker, Amazon ECR, Amazon ECS on EC2, and an Application Load Balancer. Configured path-based routing and service isolation to support scalable deployment and independent service management.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="technical-skills">
+          <h3>TECHNICAL SKILLS</h3>
+          <div class="timeline-content collapsible">
+            <ul>
+              <li><strong>Programming & Automation:</strong> Python, PowerShell, Bash, Microsoft Graph REST APIs, scripting and workflow automation</li>
+              <li><strong>Machine Learning & AI:</strong> TensorFlow, Keras, Scikit-learn, supervised learning, neural networks, LSTM, CNN fundamentals, Random Forest, SVM, Gradient Boosting, Logistic and Linear Regression, NLP, predictive modeling</li>
+              <li><strong>Research & Evaluation:</strong> Quantitative research design, exploratory data analysis, feature engineering, hyperparameter tuning, cross-validation, accuracy, precision, recall, F1 score, ROC-AUC, confusion matrices, feature-importance analysis</li>
+              <li><strong>Data Engineering & Databases:</strong> ETL development, data pipelines, data integration, MySQL, PostgreSQL, Azure SQL, Databricks, Google Colab</li>
+              <li><strong>Cloud & Distributed Systems:</strong> Microsoft Azure, AWS, Kubernetes, Docker, Terraform, EC2, ECR, ECS, S3, Lambda, CloudWatch, load balancing, VPC networking, CI/CD</li>
+              <li><strong>Systems, Networking & Security:</strong> Windows Server, Active Directory, DNS, DHCP, TCP/IP, VLANs, VPN, RDP, firewalls, identity governance, MFA, API security, Zero Trust</li>
+              <li><strong>Visualization & Tools:</strong> Power BI, Tableau, Matplotlib, Seaborn, Git, GitHub, Excel, Hyper-V, VMware, SAN</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="experience">
+          <h3>PROFESSIONAL EXPERIENCE</h3>
+          <div class="timeline-content collapsible">
+            <h4>ZIMBABWE PLATINUM MINES — Mhondoro-Ngezi, Zimbabwe</h4>
+            <p><strong>Cloud Infrastructure Engineer</strong> &middot; September 2022 – January 2025</p>
+            <ul>
+              <li>Architected and deployed Kubernetes-based container orchestration, reducing application deployment time by 35% and improving release reliability.</li>
+              <li>Managed Azure virtual machines and migrated more than 25 workloads to Azure, reducing infrastructure costs by 20%.</li>
+              <li>Monitored performance, security, and cost across more than 100 Azure subscriptions, contributing to annual cost optimization of 30%.</li>
+              <li>Managed identity governance, conditional access, and multifactor authentication for more than 3,000 user accounts, reducing unauthorized access by over 90%.</li>
+              <li>Designed and managed Azure Virtual Desktop for 180 remote employees, reducing access latency by 30% and improving connection reliability to 99.5%.</li>
+              <li>Synchronized approximately 6,000 directory objects using DirSync and Azure AD Connect with 99% synchronization accuracy.</li>
+              <li>Managed networks, firewalls, switches, and routers across seven mining divisions, sustaining 98% uptime for automated mining activities and 99.5% uptime for other operations.</li>
+            </ul>
+
+            <h4>ABC OF CLOUD COMPUTING — Remote</h4>
+            <p><strong>Cloud Infrastructure Engineer Intern (Volunteer)</strong> &middot; June 2025 – September 2025</p>
+            <ul>
+              <li>Deployed and managed Azure virtual machines in Windows environments.</li>
+              <li>Supported migrations from on-premises infrastructure to cloud platforms.</li>
+              <li>Implemented Azure Virtual Desktop and assisted with remote-user profile migration.</li>
+              <li>Monitored Azure resources and supported performance, security, and cost optimization.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="additional-projects">
+          <h3>ADDITIONAL APPLIED PROJECTS</h3>
+          <div class="timeline-content collapsible">
+            <ul>
+              <li><strong>Cloud-Based Health Information System</strong> — Designed a HIPAA-conscious cloud platform for patient-record management, emphasizing access control, availability, privacy, scalable information workflows, and secure cloud architecture.</li>
+              <li><strong>Inventory Management System</strong> — Designed a database-driven inventory system for boutique retailers with real-time stock tracking and automated replenishment alerts, structured for reliable operational data and future predictive-demand capabilities.</li>
+              <li><strong>Image Classification with Convolutional Neural Networks</strong> — Designed and trained a TensorFlow/Keras CNN using convolution, pooling, dense, batch-normalization, dropout, and image-augmentation components. Prepared image datasets through rescaling and augmentation and monitored training and validation performance.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="research-prep">
+          <h3>RESEARCH PREPARATION</h3>
+          <div class="timeline-content collapsible">
+            <p>Industrial AI Context: Combined graduate research in predictive maintenance with professional experience supporting automated mining operations, high-availability infrastructure, cloud systems, and operational technology environments.</p>
+            <p>Research Design: Experience with quantitative and mixed-methods research, retrospective and real-time data analysis, exploratory and confirmatory analysis, statistical testing, model comparison, cross-validation, and interpretation of practical limitations.</p>
+            <p>Systems Perspective: Experience spans machine learning, cloud architecture, API security, container orchestration, data pipelines, networking, identity systems, and infrastructure monitoring.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item" id="certifications">
+          <h3>CERTIFICATIONS</h3>
+          <div class="timeline-content collapsible">
+             <ul>
+               <li>Microsoft Certified: Azure Data Fundamentals</li>
+               <li>Microsoft Certified: Azure Fundamentals</li>
+               <li>Microsoft Certified: Azure Administrator Associate</li>
+             </ul>
+           </div>
+         </article>
+
+      </section>
+
+      <footer class="site-footer">
+        <div class="site-footer-inner">
+          Flora Phiri &copy; 2026 &middot; <a href="index.html">Back to portfolio</a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="js/theme.js"></script>
+    <script>
+      // Toggle collapsible sections
+      document.querySelectorAll('.timeline-item h3').forEach(h => {
+        h.style.cursor = 'pointer';
+        h.addEventListener('click', () => {
+          const content = h.nextElementSibling;
+          if (!content) return;
+          content.classList.toggle('collapsed');
+        });
+      });
+
+      // download as PDF via print (user can save as PDF)
+      document.getElementById('download-pdf').addEventListener('click', () => {
+        window.print();
+      });
+
+      // timeline point click: expand target section and scroll into view
+      document.querySelectorAll('.timeline-visual .timeline-point').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // clear active states
+          document.querySelectorAll('.timeline-visual .timeline-point').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // collapse all sections, then expand target
+          const target = document.querySelector(btn.getAttribute('data-target'));
+          if (!target) return;
+          // collapse others
+          document.querySelectorAll('.timeline-content.collapsible').forEach(c => c.classList.add('collapsed'));
+          // expand selected
+          const content = target.querySelector('.timeline-content');
+          if (content) content.classList.remove('collapsed');
+          // set aria-selected
+          document.querySelectorAll('.timeline-visual .timeline-point').forEach(b => b.setAttribute('aria-selected','false'));
+          btn.setAttribute('aria-selected','true');
+          // scroll
+          target.scrollIntoView({behavior: 'smooth', block: 'start'});
+        });
+      });
+
+      // set first point active by default
+      const first = document.querySelector('.timeline-visual .timeline-point');
+      if (first) first.click();
+    </script>
+  </body>
+</html>

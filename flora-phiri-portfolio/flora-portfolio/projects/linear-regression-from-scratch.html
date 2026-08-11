@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flora Phiri's linear regression from scratch: solving the normal equation with nothing but NumPy to predict car prices."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <title>Linear Regression from Scratch | Flora Phiri</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="../index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../documents.html">Documents</a>
+          <a href="../index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle">light mode</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="project-page">
+      <p class="project-page-category">Machine Learning</p>
+      <h1 class="project-page-title">Linear Regression from Scratch</h1>
+      <p class="project-page-lede">
+        Every library will fit a linear regression for you in one line. This
+        project throws the libraries away and predicts car prices with
+        nothing but NumPy, to prove the math is understood rather than just
+        the API.
+      </p>
+
+      <div class="project-meta">
+        <p class="project-meta-label">Tools</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">pandas</span>
+        </div>
+      </div>
+
+      <h2>The problem</h2>
+      <p>
+        The task is predicting car prices from a dataset of vehicle
+        specifications, without touching scikit-learn. Calling
+        <strong>model.fit</strong> tells you nothing about what happens
+        inside it, and I wanted to be able to explain a regression from the
+        linear algebra up, not just drive one from the API.
+      </p>
+
+      <h2>My approach</h2>
+      <p>
+        The heart of the project is solving the <strong>normal
+        equation</strong> directly: form X-transpose-X, invert it, and apply
+        it to the targets to get the weights, with a column of ones stacked
+        onto the feature matrix so the bias term falls out of the same
+        computation.
+      </p>
+      <p>
+        Everything around the solver is equally hand-made. I evaluate with a
+        hand-written <strong>RMSE</strong> and engineer the features
+        manually: the car's age is derived from its model year, and door
+        counts and makes are one-hot encoded with plain comparisons instead
+        of a library transformer.
+      </p>
+      <p class="snippet-caption">Hand-written RMSE and manual feature engineering</p>
+      <figure class="snippet-frame">
+        <figcaption class="snippet-filename">features_and_metrics.py</figcaption>
+        <pre><code>def rmse(y, y_pred):
+    error = y_pred - y
+    mse = (error ** 2).mean()
+    return np.sqrt(mse)
+
+def prepare_X(data):
+    data = data.copy()
+    features = base.copy()
+    data["age"] = 2017 - data.year
+    features.append("age")
+    for v in [2, 3, 4]:
+        feature = "num_doors_%s" % v
+        data[feature] = (data["number_of_doors"] == v).astype(int)
+        features.append(feature)
+    return data[features].fillna(0).values</code></pre>
+      </figure>
+
+      <h2>The outcome</h2>
+      <p>
+        A working regression that predicts car prices, and a much better feel
+        for what <strong>model.fit</strong> does under the hood. Having built
+        the feature matrix, the solver, and the metric by hand once, the
+        library versions stopped being magic. Now when a model misbehaves, I
+        can reason about whether the problem lives in the data, the features,
+        or the math.
+      </p>
+
+      <a class="project-link" href="https://github.com/floraphiri/linear-regression-from-scratch" target="_blank" rel="noopener">See the code on GitHub</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to all projects</a>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Flora Phiri &copy; 2026</div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+  </body>
+</html>

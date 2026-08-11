@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flora Phiri's capstone project: Smart-DMV, a digital verification system design that moves DC DMV identity checks ahead of the visit."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <title>Smart-DMV Digital Verification | Flora Phiri</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="../index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../documents.html">Documents</a>
+          <a href="../index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle">light mode</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="project-page">
+      <p class="project-page-category">Systems Design</p>
+      <h1 class="project-page-title">Smart-DMV Digital Verification System</h1>
+      <p class="project-page-lede">
+        My graduate capstone, built with a five-person project team for the
+        Integrated Information Systems Capstone (ISTM 6210) at The George
+        Washington University: a system design that modernizes the DC DMV's
+        pre-appointment workflow.
+      </p>
+
+      <div class="project-meta">
+        <p class="project-meta-label">Tools</p>
+        <div class="project-tools">
+          <span class="tool-tag">Systems Analysis</span>
+          <span class="tool-tag">React</span>
+          <span class="tool-tag">Tailwind CSS</span>
+          <span class="tool-tag">AWS Textract</span>
+        </div>
+      </div>
+
+      <h2>The problem</h2>
+      <p>
+        The DC DMV serves more than <strong>650,000 licensed drivers</strong>
+        through roughly 3,200 daily interactions, and identity verification
+        happens manually at the counter. The result is 45 to 60 minute
+        average waits, a <strong>35% rejection rate</strong> with one in
+        three residents turned away over document errors, and 28% of staff
+        time spent on manual checks. The root cause our analysis surfaced:
+        verification happens during the visit, rather than before it.
+      </p>
+
+      <h2>What the work covers</h2>
+      <p>
+        Our design shifts verification upstream. Residents upload identity
+        documents from the web or their phone, an AI-powered gatekeeper runs
+        automated OCR and confidence scoring on them, and appointments can
+        only be booked after the documents pass, so every resident who
+        reaches the counter is already service-ready. Low-confidence
+        documents route to DMV staff for manual review instead of failing
+        silently.
+      </p>
+      <p class="snippet-caption">The Level 0 operational workflow, from login to booked appointment</p>
+      <figure class="snippet-frame">
+        <figcaption class="snippet-filename">operational_workflow.txt</figcaption>
+        <pre><code>1.0 User Authentication
+      |
+      v
+2.0 AI Intake &amp; Text Extraction
+      |
+      v
+3.0 Automated Validation Logic
+      |-- high confidence --> 4.0 Appointment Scheduling
+      '-- low confidence  --> DMV Admin manual review</code></pre>
+      </figure>
+      <p>
+        We modeled the system from the context view down through the data
+        flow diagrams: image quality checks, OCR text extraction, confidence
+        scoring, and PII masking with secure storage. The proposed stack is
+        a <strong>React and Tailwind CSS</strong> front end for residents
+        with <strong>AWS Textract</strong> handling text extraction, designed
+        for compliance with REAL ID and District privacy standards.
+      </p>
+
+      <h2>The outcome</h2>
+      <p>
+        The projected impact: average waits drop from 45&ndash;60 minutes to
+        <strong>under 15</strong>, rejections fall from 35% to under 15%,
+        manual verification shrinks to a 20&ndash;30% exception workload,
+        and daily throughput gains 35% capacity. Against an estimated
+        $80k&ndash;120k build cost, the annual savings of $150k&ndash;200k
+        mean the system pays for itself within its first year of operation.
+      </p>
+
+      <a class="project-link" href="../assets/docs/smart-dmv-digital-verification.pdf" target="_blank" rel="noopener">View the full capstone deck</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to all projects</a>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Flora Phiri &copy; 2026</div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+  </body>
+</html>
