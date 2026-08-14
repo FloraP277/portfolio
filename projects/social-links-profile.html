@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flora Phiri's social links profile card: a responsive Frontend Mentor challenge built with HTML and CSS."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <title>Social Links Profile Card | Flora Phiri</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="../index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../documents.html">Documents</a>
+          <a href="../index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle">light mode</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="project-page">
+      <p class="project-page-category">Web Development</p>
+      <h1 class="project-page-title">Social Links Profile Card</h1>
+      <p class="project-page-lede">
+        A responsive profile card built for a Frontend Mentor challenge with
+        nothing but HTML and CSS. If parts of this portfolio look familiar
+        after reading this page, that is no accident.
+      </p>
+
+      <div class="project-meta">
+        <p class="project-meta-label">Tools</p>
+        <div class="project-tools">
+          <span class="tool-tag">HTML</span>
+          <span class="tool-tag">CSS</span>
+          <span class="tool-tag">Flexbox</span>
+          <span class="tool-tag">Git</span>
+        </div>
+      </div>
+
+      <h2>The problem</h2>
+      <p>
+        Frontend Mentor provides a design, mobile at 375px and desktop at
+        1440px, plus a style guide of colors and typography. The challenge is
+        to reproduce it faithfully and make it responsive across the full
+        range of screen sizes in between, including hover states for every
+        link.
+      </p>
+
+      <h2>My approach</h2>
+      <p>
+        The card is a flex column: avatar, name, location, a short bio, and a
+        stack of link buttons. Flexbox handles the centering both inside the
+        card and on the page, a media query adjusts spacing and button width
+        for small screens, and the hover states come straight from the design
+        spec. The project lives in Git with a proper commit history, which
+        was part of the exercise too.
+      </p>
+      <p class="snippet-caption">Responsive adjustments for small screens</p>
+      <figure class="snippet-frame">
+        <figcaption class="snippet-filename">main.css</figcaption>
+        <pre><code>@media only screen and (max-width: 1000px) {
+  .container {
+    margin: 10em 1em;
+  }
+  .btnpress {
+    width: 90%;
+  }
+  .image img {
+    height: 4rem;
+    width: 4rem;
+  }
+}</code></pre>
+      </figure>
+
+      <h2>The outcome</h2>
+      <p>
+        A pixel-faithful, responsive card and, more importantly, the seed of
+        this portfolio. The profile card you see on my home page and the
+        stack of contact buttons below it are direct descendants of this
+        design, rebuilt in this site's navy palette with light and dark
+        themes on top.
+      </p>
+
+      <a class="project-link" href="https://github.com/floraphiri/social-links-profile" target="_blank" rel="noopener">See the code on GitHub</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to all projects</a>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Flora Phiri &copy; 2026</div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+  </body>
+</html>

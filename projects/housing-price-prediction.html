@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flora Phiri's housing price prediction project: a Random Forest regression model on the Kaggle housing dataset."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <title>Housing Price Prediction | Flora Phiri</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="../index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../documents.html">Documents</a>
+          <a href="../index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle">light mode</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="project-page">
+      <p class="project-page-category">Machine Learning</p>
+      <h1 class="project-page-title">Housing Price Prediction with Random Forest</h1>
+      <p class="project-page-lede">
+        A regression project on the Kaggle housing dataset, predicting sale
+        prices from dozens of features describing each property.
+      </p>
+
+      <div class="project-meta">
+        <p class="project-meta-label">Tools</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">pandas</span>
+          <span class="tool-tag">scikit-learn</span>
+          <span class="tool-tag">Random Forest</span>
+        </div>
+      </div>
+
+      <h2>The problem</h2>
+      <p>
+        The dataset describes homes through a mix of numeric and categorical
+        features, from lot size and year built to neighborhood and roof
+        material, with a sale price to predict. It is a classic regression
+        problem with a realistic complication: the data arrives with missing
+        values scattered across many columns, and the categorical features
+        outnumber the numeric ones.
+      </p>
+
+      <h2>My approach</h2>
+      <p>
+        After loading the training and test sets, I set the
+        <strong>Id</strong> column as the index so it could never leak into
+        the model as a fake feature, then audited every column for missing
+        values and data types. Missing data got handled column by column
+        rather than with a blanket fill, since a missing garage year means
+        something different from a missing lot frontage.
+      </p>
+      <p>
+        For the model I chose a <strong>Random Forest</strong>. An ensemble
+        of decision trees handles the mix of feature types well, is robust to
+        outliers, and gives feature importances that show which properties of
+        a house actually drive its price.
+      </p>
+      <p class="snippet-caption">Validating with cross-validation and MAE</p>
+      <figure class="snippet-frame">
+        <figcaption class="snippet-filename">evaluation.py</figcaption>
+        <pre><code>scores = -1 * cross_val_score(
+    my_pipeline, X, y, cv=5,
+    scoring="neg_mean_absolute_error",
+)
+print("Mean Cross Validation Score: ", scores.mean())
+print("Validation MAE: ", mean_absolute_error(y_val, val_preds))</code></pre>
+      </figure>
+
+      <h2>The outcome</h2>
+      <p>
+        The trained forest predicts sale prices on held-out data and, through
+        its feature importances, tells a story about the housing market:
+        overall quality and living area dominate, while many features
+        contribute almost nothing. That insight matters as much as the
+        predictions, because it says where data collection effort is actually
+        worth it.
+      </p>
+
+      <a class="project-link" href="https://github.com/floraphiri/housing-price-prediction" target="_blank" rel="noopener">See the code on GitHub</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to all projects</a>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Flora Phiri &copy; 2026</div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+  </body>
+</html>

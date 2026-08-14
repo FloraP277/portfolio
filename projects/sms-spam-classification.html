@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flora Phiri's SMS spam classifier: a TF-IDF feature pipeline and logistic regression built in Spark ML on Databricks."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <title>SMS Spam Classification | Flora Phiri</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="../index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../documents.html">Documents</a>
+          <a href="../index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle">light mode</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="project-page">
+      <p class="project-page-category">Big Data</p>
+      <h1 class="project-page-title">SMS Spam Classification with Spark ML</h1>
+      <p class="project-page-lede">
+        Thousands of text messages, some genuine and some spam, and a
+        classifier that has to tell them apart. This project builds the
+        entire spam filter inside Spark ML on Databricks, from raw text file
+        to trained model.
+      </p>
+
+      <div class="project-meta">
+        <p class="project-meta-label">Tools</p>
+        <div class="project-tools">
+          <span class="tool-tag">PySpark</span>
+          <span class="tool-tag">Spark ML</span>
+          <span class="tool-tag">Databricks</span>
+          <span class="tool-tag">TF-IDF</span>
+        </div>
+      </div>
+
+      <h2>The problem</h2>
+      <p>
+        The dataset is the SMS Spam Collection: real text messages labeled
+        <strong>ham</strong> or <strong>spam</strong>. Text is nothing like
+        the tidy numeric tables most classifiers expect, so before any model
+        can learn, every message has to become a vector of numbers, and it
+        has to happen at Spark scale rather than in pandas.
+      </p>
+
+      <h2>My approach</h2>
+      <p>
+        The heart of the project is a <strong>TF-IDF</strong> feature
+        pipeline: a Tokenizer splits each message into words, a
+        StopWordsRemover drops the noise, a CountVectorizer counts what
+        remains, and IDF reweights the counts so that words which appear
+        everywhere stop dominating. A StringIndexer turns the ham/spam label
+        into a number, and a VectorAssembler stitches the features together
+        for the model.
+      </p>
+      <p>
+        Spam messages also tend to be long, so I added the raw character
+        length of each message as an extra feature before the split, then
+        trained a <strong>logistic regression</strong> classifier on an
+        80/20 train-test split.
+      </p>
+      <p class="snippet-caption">Adding message length as an extra feature</p>
+      <figure class="snippet-frame">
+        <figcaption class="snippet-filename">length_feature.py</figcaption>
+        <pre><code>from pyspark.sql.functions import length, col
+columns = data.columns
+data = data.withColumn("length", length(col(f"`{columns[1]}`")))
+data.show()</code></pre>
+      </figure>
+
+      <h2>The outcome</h2>
+      <p>
+        A working spam filter whose every stage, ingestion, feature
+        engineering, and training, runs distributed on the cluster. The
+        project started life inside my Databricks collection and earned its
+        own write-up because it is the most complete pipeline in it: the
+        same shape as a production text classifier, just smaller.
+      </p>
+
+      <a class="project-link" href="https://github.com/floraphiri/sms-spam-classification" target="_blank" rel="noopener">See the code on GitHub</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to all projects</a>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Flora Phiri &copy; 2026</div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+  </body>
+</html>

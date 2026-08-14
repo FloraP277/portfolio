@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flora Phiri's diabetes prediction project: a Keras neural network trained on the Pima Indians Diabetes dataset."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <title>Diabetes Prediction | Flora Phiri</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="../index.html">Flora Phiri</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../documents.html">Documents</a>
+          <a href="../index.html#contact">Contact</a>
+          <button type="button" class="theme-toggle">light mode</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="project-page">
+      <p class="project-page-category">Machine Learning</p>
+      <h1 class="project-page-title">Diabetes Prediction with a Neural Network</h1>
+      <p class="project-page-lede">
+        Can diagnostic measurements alone tell you whether a patient has
+        diabetes? I trained a neural network on the Pima Indians Diabetes
+        dataset to find out.
+      </p>
+
+      <div class="project-meta">
+        <p class="project-meta-label">Tools</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Keras</span>
+          <span class="tool-tag">pandas</span>
+          <span class="tool-tag">scikit-learn</span>
+          <span class="tool-tag">seaborn</span>
+        </div>
+      </div>
+
+      <h2>The problem</h2>
+      <p>
+        The dataset comes from the National Institute of Diabetes and
+        Digestive and Kidney Diseases. Every record describes a patient
+        through measurements such as glucose level, blood pressure, BMI, and
+        age, together with a label saying whether the patient was diagnosed
+        with diabetes. The goal is a model that predicts that diagnosis for a
+        new patient.
+      </p>
+
+      <h2>My approach</h2>
+      <p>
+        I started with exploratory analysis to understand the shape and
+        statistics of every column before touching a model. Because neural
+        networks are sensitive to the scale of their inputs, I standardized
+        the features with <strong>StandardScaler</strong> so that glucose
+        readings in the hundreds would not dominate features measured in
+        single digits.
+      </p>
+      <p>
+        The model itself is a Keras <strong>Sequential</strong> network of
+        dense layers with <strong>Dropout</strong> between them to keep it
+        from memorizing the training set, trained with the
+        <strong>Adam</strong> optimizer. I plotted the loss live during
+        training, which makes it obvious the moment the model starts
+        overfitting rather than discovering it after the fact.
+      </p>
+      <p class="snippet-caption">Compiling and training with live loss plotting</p>
+      <figure class="snippet-frame">
+        <figcaption class="snippet-filename">training.py</figcaption>
+        <pre><code>model.compile(
+    loss="binary_crossentropy",
+    optimizer="adam",
+    metrics=["accuracy"],
+)
+history = model.fit(
+    X_train, Y_train,
+    epochs=50, batch_size=50,
+    callbacks=[plot_losses],
+    validation_split=0.1, verbose=1,
+)</code></pre>
+      </figure>
+
+      <h2>The outcome</h2>
+      <p>
+        The network learned to separate diabetic from non-diabetic patients
+        from the diagnostic measurements alone. Just as valuable was what the
+        process taught me about regularization in practice. Watching the
+        training and validation curves diverge, then adding dropout and
+        watching them come back together, made the concept concrete in a way
+        no textbook explanation had.
+      </p>
+
+      <a class="project-link" href="https://github.com/floraphiri/diabetes-prediction" target="_blank" rel="noopener">See the code on GitHub</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to all projects</a>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Flora Phiri &copy; 2026</div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+  </body>
+</html>
