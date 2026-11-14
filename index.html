@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Flora Phiri is a data analyst working across machine learning, big data, and SQL. Explore her projects and get in touch."
+      content="Flora Phiri is a data and AI engineer building data pipelines, lakehouse and streaming systems, and LLM applications. Explore her projects and get in touch."
     />
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
     <link rel="stylesheet" href="main.css" />
@@ -16,8 +16,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Flora Phiri",
-      "jobTitle": "AI & ML Engineer",
-      "description": "AI Engineer focusing on machine learning, large language models, big data, and production ML systems.",
+      "jobTitle": "Data & AI Engineer",
+      "description": "Data and AI engineer building data pipelines, lakehouse and streaming systems, and LLM applications.",
       "url": "https://florap277.github.io/portfolio/",
       "sameAs": [
         "https://www.linkedin.com/in/flora-phiri/",
@@ -49,9 +49,9 @@
           <div class="hero-inner">
             <div class="hero-left">
               <h1 class="profile-name">Flora Phiri</h1>
-              <p class="profile-role">AI & Machine Learning Engineer</p>
+              <p class="profile-role">Data &amp; AI Engineer</p>
               <p class="profile-tagline">
-                I build production-ready ML systems and agentic AI pipelines. I focus on scalable data engineering, model evaluation, and reliable deployments for real-world applications.
+                I build data pipelines and AI systems that turn messy, scattered data into something people can trust and use.
               </p>
 
               <div class="hero-highlights">
@@ -83,50 +83,50 @@
         <!-- Project gallery: cards that link directly to GitHub repositories -->
         <div class="project-gallery" aria-label="Featured projects">
           <article class="project-card">
-            <h3 class="project-title">Agentic AI Pipeline</h3>
-            <p class="project-excerpt">End-to-end orchestration, automated evaluation and retraining for agentic systems.</p>
-            <p class="project-meta">Python · Docker · Kubernetes</p>
-            <a class="project-link" href="https://github.com/floraphiri/agentic-ai" target="_blank" rel="noopener">View on GitHub</a>
+            <h3 class="project-title">Directory Sync &amp; Reconciliation</h3>
+            <p class="project-excerpt">Nightly pipeline that keeps an HR system and an identity directory in agreement and reports every mismatched account. 30-day test with 6,000 employees: 99.6–99.9% daily accuracy.</p>
+            <p class="project-meta">Python · PostgreSQL · Docker · Kubernetes</p>
+            <a class="project-link" href="https://github.com/FloraP277/Data-Engineering/tree/main/data-engineering/directory-sync-reconciliation" target="_blank" rel="noopener">View on GitHub</a>
           </article>
 
           <article class="project-card">
-            <h3 class="project-title">Agentic AI Demo (sample)</h3>
-            <p class="project-excerpt">Lightweight demo and reproducible example pipeline used for portfolio demonstrations.</p>
-            <p class="project-meta">Streamlit · Python · Tests</p>
-            <a class="project-link" href="https://github.com/floraphiri/agentic-ai-sample" target="_blank" rel="noopener">View on GitHub</a>
+            <h3 class="project-title">Real-Time API Monitoring</h3>
+            <p class="project-excerpt">Streaming pipeline that flags latency spikes, error bursts and regional outages from microservice logs. Caught 3 of 3 simulated incidents within 60 seconds, with exactly-once counts.</p>
+            <p class="project-meta">Kafka · Spark Structured Streaming · Grafana</p>
+            <a class="project-link" href="https://github.com/FloraP277/Data-Engineering/tree/main/data-engineering/api-monitoring-stream" target="_blank" rel="noopener">View on GitHub</a>
           </article>
 
           <article class="project-card">
-            <h3 class="project-title">Big Data / Databricks</h3>
-            <p class="project-excerpt">Databricks notebooks and Spark pipelines for large-scale data processing and feature engineering.</p>
-            <p class="project-meta">Spark · Databricks · PySpark</p>
-            <a class="project-link" href="https://github.com/floraphiri/big-data-databricks" target="_blank" rel="noopener">View on GitHub</a>
+            <h3 class="project-title">Mine Safety Lakehouse</h3>
+            <p class="project-excerpt">Weekly bronze/silver/gold pipeline on Databricks for U.S. mine safety data, with incremental loads and every bad record quarantined by a quality rule.</p>
+            <p class="project-meta">PySpark · Delta Lake · Databricks · Unity Catalog</p>
+            <a class="project-link" href="https://github.com/FloraP277/Data-Engineering/tree/main/data-engineering/mine-safety-lakehouse" target="_blank" rel="noopener">View on GitHub</a>
           </article>
 
           <article class="project-card">
-            <h3 class="project-title">Recommender System</h3>
-            <p class="project-excerpt">Large-scale recommender using collaborative filtering and offline/online evaluation.</p>
-            <p class="project-meta">Spark · PostgreSQL · MLflow</p>
-            <a class="project-link" href="https://github.com/floraphiri/recommender" target="_blank" rel="noopener">View on GitHub</a>
+            <h3 class="project-title">Hospital Quality Warehouse</h3>
+            <p class="project-excerpt">Star-schema warehouse that tracks CMS hospital star ratings across releases with SCD Type 2 history, orchestrated by Airflow and checked by 16 dbt tests.</p>
+            <p class="project-meta">Airflow · dbt · PostgreSQL</p>
+            <a class="project-link" href="https://github.com/FloraP277/Data-Engineering/tree/main/data-engineering/hospital-quality-warehouse" target="_blank" rel="noopener">View on GitHub</a>
           </article>
 
           <article class="project-card">
-            <h3 class="project-title">HTML Portfolio (this site)</h3>
-            <p class="project-excerpt">The source for this static portfolio site with responsive, accessible design.</p>
-            <p class="project-meta">HTML · CSS · JavaScript</p>
-            <a class="project-link" href="https://github.com/floraphiri/flora-portfolio" target="_blank" rel="noopener">View on GitHub</a>
+            <h3 class="project-title">Mine Safety Regulations RAG Assistant</h3>
+            <p class="project-excerpt">Question answering over U.S. mine safety regulations that cites the section behind every answer, comparing dense, keyword, hybrid and reranked retrieval.</p>
+            <p class="project-meta">sentence-transformers · pgvector · Gemini</p>
+            <a class="project-link" href="https://github.com/FloraP277/Gen-AI---Agentic-Systems/tree/main/Generative-AI-%26-Agentic-Systems/mine-safety-rag" target="_blank" rel="noopener">View on GitHub</a>
           </article>
 
           <article class="project-card">
-            <h3 class="project-title">LLM & NLP Experiments</h3>
-            <p class="project-excerpt">Prompting experiments, evaluation harness, and small LLM pipelines used for research demos.</p>
-            <p class="project-meta">Hugging Face · PyTorch · Transformers</p>
-            <a class="project-link" href="https://github.com/floraphiri/llm-experiments" target="_blank" rel="noopener">View on GitHub</a>
+            <h3 class="project-title">Mine Operations Agent (custom MCP server)</h3>
+            <p class="project-excerpt">AI analyst that writes mine safety reports by calling tools from my own Model Context Protocol server, compared against a fixed workflow.</p>
+            <p class="project-meta">MCP · Gemini tool calling · pydantic</p>
+            <a class="project-link" href="https://github.com/FloraP277/Gen-AI---Agentic-Systems/tree/main/Generative-AI-%26-Agentic-Systems/mine-ops-agent" target="_blank" rel="noopener">View on GitHub</a>
           </article>
         </div>
 
         <div class="view-all-wrapper">
-          <a class="view-all-button" href="https://github.com/floraphiri?tab=repositories" target="_blank" rel="noopener">View all repositories on GitHub</a>
+          <a class="view-all-button" href="https://github.com/FloraP277?tab=repositories" target="_blank" rel="noopener">View all repositories on GitHub</a>
         </div>
 
         <p class="slide-counter" aria-live="polite"></p>
